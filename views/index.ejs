@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Uploader</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-color: rgb(157, 220, 241);">
+    <h1 style="display:flex; color: rgb(255, 255, 255); padding: 20px; margin: 20px; font-size: 3em; background-color: rgb(40, 93, 254); background-blend-mode: lighten; border-radius: 10px; justify-self: center; align-self: center;">Image Uploader</h1>
+    <div>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <input type="file" name="file" id="file-input">
+            </div>
+            <div class="form-group">
+                <input type="submit" name="" id="" value="Upload">
+            </div>
+        </form>
+    </div>
+    <div id="uploaded-image-container">
+        <% if(url) {%>
+            <h2>File Uploaded Successfully</h2>
+            <img src="<%= url %>" alt="Uploaded Image">
+            <%} else if(url==0) {%>
+        <h2 style="color: red;">Please upload file!!</h2>
+            
+            <%}%>
+        
+        
+        </div>
+        <footer>
+            ©2025 Ishaan Bajpai | All Rights Reserved
+        </footer>
+
+</body>
+</html>
