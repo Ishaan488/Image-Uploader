@@ -61,28 +61,6 @@ app.post('/upload', upload.single('file'), async (req, res)=> {
     res.render("index.ejs",{url:0});
   }
   
-
-
-//     if(file){
-// res.render("index.ejs",{url:cloudinaryRes.secure_url});
-//     }
-//     else{
-//       res.render("index.js");
-//     }
-
-    // try{
-    // } catch(error){
-    //   res.render("index.js");
-    // }
-
-
-
-    // res.json({message:"file uploaded",
-    //     filePath:file,
-    //     cloudinaryRes
-    // })
-  // req.file is the `avatar` file
-  // req.body will hold the text fields, if there were any
 })
 
 
