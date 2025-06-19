@@ -3,18 +3,19 @@ import mongoose from 'mongoose';
 import multer from 'multer';
 import { v2 as cloudinary } from 'cloudinary';
 import path from 'path'
+import "dotenv/config"
 
 
 const app = express();
 app.use(express.static(path.join(path.resolve(),'public')))
 
 cloudinary.config({ 
-        cloud_name: 'dherpwuc8', 
-        api_key: '952377239925465', 
-        api_secret: 'SCWG27JKcLlnFK1hEtrgR0vyGnM' // Click 'View API Keys' above to copy your API secret
+        cloud_name: `${process.env.cloud_name}`, 
+        api_key: `${process.env.api_key}`, 
+        api_secret: `${process.env.api_secret}` // Click 'View API Keys' above to copy your API secret
     });
 
-mongoose.connect("mongodb+srv://ishaanbajpai732004:beaBAjB1aumvNut4@cluster0.dzi2tdz.mongodb.net/", {
+mongoose.connect(`${process.env.connectionString}`, {
     dbName: "Image_Uploader"
 })
 .then(() => { console.log("MongoDB Connected.") })
